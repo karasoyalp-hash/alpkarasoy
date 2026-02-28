@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { MousePointer2, Sparkles } from "lucide-react"
 
 export function HeroSection() {
     return (
@@ -23,7 +24,7 @@ export function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="max-w-2xl text-base md:text-lg text-gray-400 mb-12 leading-relaxed relative z-20 pointer-events-none"
             >
-                I'm a <span className="text-white">UI/UX designer</span> focused on creating functional, aesthetic, and<br className="hidden md:block" />
+                I&apos;m a <span className="text-white">UI/UX designer</span> focused on creating functional, aesthetic, and<br className="hidden md:block" />
                 conversion-driven digital experiences.
             </motion.p>
 
@@ -55,6 +56,15 @@ export function HeroSection() {
                 {/* Ps */}
                 <div className="w-14 h-14 rounded-full bg-[#001E36] border border-[#31A8FF]/30 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
                     <span className="text-[#31A8FF] font-bold text-xl tracking-tight">Ps</span>
+                </div>
+                {/* Cursor AI */}
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/20 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer group" title="Cursor AI">
+                    <MousePointer2 className="w-6 h-6 text-white group-hover:text-blue-400 transition-colors" />
+                </div>
+                {/* Antigravity AI */}
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-purple-500/30 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer group relative overflow-hidden" title="Antigravity">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <Sparkles className="w-6 h-6 text-purple-400 group-hover:text-purple-300 transition-colors relative z-10" />
                 </div>
             </motion.div>
         </section>
