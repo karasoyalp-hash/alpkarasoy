@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+}
+
+:root {
+  --background: #050607;
+  --foreground: #f3f4f6;
+  --primary: #00FFC6;
+  --secondary: #1e3a8a;
+  --font-inter: 'Inter', sans-serif;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #050607;
+    --foreground: #f3f4f6;
+    --primary: #00FFC6;
+    --secondary: #1e3a8a;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient-flow 3s ease infinite;
+}
+
+.card-container {
+  container-type: size;
+}
+
+@keyframes scrollImage {
+  0% {
+    transform: translateY(100cqh);
+  }
+
+  100% {
+    transform: translateY(calc(100cqh - 100% + 100px));
+  }
+}
+
+.animate-scroll-vertical {
+  animation: scrollImage linear forwards;
+}
+
+.animate-pause {
+  animation-play-state: paused !important;
+}
