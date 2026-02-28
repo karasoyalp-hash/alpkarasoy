@@ -34,16 +34,16 @@ export function Navbar() {
                 </Link>
 
                 <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-gray-400 absolute left-1/2 -translate-x-1/2">
-                    <Link href="#work" className="hover:text-white transition-colors">Work</Link>
-                    <Link href="#services" className="hover:text-white transition-colors">Services</Link>
-                    <Link href="#about" className="hover:text-white transition-colors">About</Link>
-                    <Link href="#contact" className="hover:text-white transition-colors">Contact</Link>
+                    <Link href="/my-portfolio" className="hover:text-white transition-colors text-white font-semibold">My Portfolio</Link>
+                    <Link href="/#work" className="hover:text-white transition-colors">Work</Link>
+                    <Link href="/#services" className="hover:text-white transition-colors">Services</Link>
+                    <Link href="/#about" className="hover:text-white transition-colors">About</Link>
                 </nav>
 
                 {/* Right Actions */}
                 <div className="flex items-center gap-4">
                     <Link
-                        href="#contact"
+                        href="/#contact"
                         className="relative flex items-center justify-center rounded-[50px] p-[2px] bg-gradient-to-r from-[#ff00cc] via-[#3333ff] to-[#00ffcc] animate-gradient transition-all hover:scale-105 group"
                     >
                         <div className="w-full h-full bg-[#050607] rounded-[48px] px-6 py-2.5 flex items-center justify-center transition-colors group-hover:bg-[#050607]/80">

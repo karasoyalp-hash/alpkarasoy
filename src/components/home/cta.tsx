@@ -23,7 +23,7 @@ export function CtaSection() {
                         <span className="block">Your Next Project?</span>
                     </h2>
                     <p className="text-primary-foreground/80 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-                        Let's work together to build something great. I'm currently available for freelance work and open to new opportunities.
+                        Let&apos;s work together to build something great. I&apos;m currently available for freelance work and open to new opportunities.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
