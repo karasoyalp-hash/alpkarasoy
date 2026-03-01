@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export function CaseStudiesSection() {
@@ -16,6 +16,8 @@ export function CaseStudiesSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const [direction, setDirection] = useState(0);
+    const sectionRef = useRef<HTMLElement>(null);
+    const isInView = useInView(sectionRef, { amount: 0.2 });
     useEffect(() => {
         // Auto-advancing is handled by `onAnimationEnd` on the image element now
     }, [currentIndex]);
@@ -31,7 +33,7 @@ export function CaseStudiesSection() {
     };
 
     return (
-        <section id="case-study" className="w-full min-h-screen shrink-0 snap-start py-24 flex items-center justify-center relative bg-transparent z-10">
+        <section ref={sectionRef} id="case-study" className="w-full min-h-screen shrink-0 snap-start py-24 flex items-center justify-center relative bg-transparent z-10">
             <div className="w-full max-w-[1200px] mx-auto px-6 h-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
                 {/* Left Card */}
@@ -63,7 +65,7 @@ export function CaseStudiesSection() {
                                             className="absolute top-0 w-[440px] h-max animate-scroll-vertical"
                                             style={{
                                                 animationDuration: '16s',
-                                                animationPlayState: isHovered ? 'paused' : 'running'
+                                                animationPlayState: (!isInView || isHovered) ? 'paused' : 'running'
                                             }}
                                             onAnimationEnd={(e) => {
                                                 if (!isHovered && e.animationName === "scrollImage") {

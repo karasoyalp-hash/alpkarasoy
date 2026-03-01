@@ -12,7 +12,8 @@ interface Project {
     typeLabel: string
     title: string
     description: string
-    imageUrl: string
+    imageUrl?: string
+    imageUrls?: string[]
     detailLink: string
 }
 
@@ -65,14 +66,41 @@ const PROJECTS: Project[] = [
     {
         id: "6",
         category: "Mobile App Design",
-        typeLabel: "Music Streaming App",
-        title: "Compose The Future",
-        description: "Aesthetic eu id cras nunc mattis bibendum orci. In enim nibh id eget. At sapien aliquet nibh nisl feugiat integer metus purus et. Neque porro quisquam est.",
-        imageUrl: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=2370&auto=format&fit=crop",
+        typeLabel: "Social Media",
+        title: "Satune",
+        description: "Lorem ipsum dolor sit amet consectetur. Imperdiet eu id cras nunc mattis bibendum orci. In enim nibh id eget. At sapien aliquet nibh nisl feugiat integer metus purus et. In habitant sed rhoncus ullamcorper.",
+        imageUrls: ["/images/satune1.png", "/images/satune2.png"],
         detailLink: "#",
     },
     {
         id: "7",
+        category: "Mobile App Design",
+        typeLabel: "Lifestyle & Pets",
+        title: "PetDate",
+        description: "Aesthetic eu id cras nunc mattis bibendum orci. In enim nibh id eget. At sapien aliquet nibh nisl feugiat integer metus purus et. In habitant sed rhoncus.",
+        imageUrls: ["/images/petdateapp1.png", "/images/petdateapp2.png"],
+        detailLink: "#",
+    },
+    {
+        id: "8",
+        category: "Mobile App Design",
+        typeLabel: "Productivity",
+        title: "TaskApp",
+        description: "Dashboard ipsum dolor sit amet consectetur. Imperdiet eu id cras nunc mattis bibendum orci. In enim nibh id eget. At sapien aliquet nibh nisl feugiat integer metus purus et.",
+        imageUrls: ["/images/taskapp1.png", "/images/taskapp2.png"],
+        detailLink: "#",
+    },
+    {
+        id: "9",
+        category: "Mobile App Design",
+        typeLabel: "Events & Ticketing",
+        title: "TicketFly",
+        description: "Focusing on crafting visually engaging and structurally sound user interfaces, ensuring seamless user journeys from problem identification to final iteration.",
+        imageUrls: ["/images/ticketfly1.png", "/images/ticketfly2.png"],
+        detailLink: "#",
+    },
+    {
+        id: "10",
         category: "B2B & SAAS Project",
         typeLabel: "Analytics Portal",
         title: "Saha Operasyonları",
@@ -137,10 +165,10 @@ export default function MyPortfolio() {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: -20 }}
                             transition={{ duration: 0.4, ease: "easeOut" }}
-                            className="group flex flex-col-reverse md:flex-row gap-6 md:gap-12 p-6 md:p-10 bg-[#0F0F0F] border border-white/5 rounded-[24px] md:rounded-[32px] hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,255,198,0.06)]"
+                            className="group flex flex-col-reverse md:flex-row gap-6 md:gap-12 p-6 md:p-10 md:pb-0 md:pr-0 bg-[#0F0F0F] border border-white/5 rounded-[24px] md:rounded-[32px] hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,255,198,0.06)] overflow-hidden items-stretch"
                         >
                             {/* Left: Text Content */}
-                            <div className="flex-1 flex flex-col justify-center">
+                            <div className="flex-1 flex flex-col justify-start h-full md:pb-10 pt-4 md:mt-6 pb-0">
                                 <span className="text-sm text-gray-500 mb-3 font-medium opacity-80 uppercase tracking-wider">
                                     {project.typeLabel}
                                 </span>
@@ -151,7 +179,7 @@ export default function MyPortfolio() {
                                     {project.description}
                                 </p>
 
-                                <div className="mt-auto">
+                                <div className="mt-auto md:mb-0 mb-6">
                                     <button className="inline-flex items-center gap-2 border border-white/20 rounded-full px-7 py-3 text-sm font-medium text-white transition-all duration-300 group-hover/btn:border-[#00FFC6] hover:bg-[#00FFC6] hover:text-black hover:border-transparent hover:shadow-[0_0_15px_rgba(0,255,198,0.5)]">
                                         Detail
                                         <Eye className="w-4 h-4" />
@@ -160,14 +188,33 @@ export default function MyPortfolio() {
                             </div>
 
                             {/* Right: Image Content */}
-                            <div className="flex-[1.2] relative w-full aspect-video md:aspect-auto md:min-h-[380px] lg:min-h-[440px] overflow-hidden rounded-[16px] md:rounded-[24px] bg-[#1a1a1a] shadow-lg border border-white/5">
-                                <img
-                                    src={project.imageUrl}
-                                    alt={project.title}
-                                    loading="lazy"
-                                    className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                                />
-                            </div>
+                            {project.category === "Mobile App Design" && project.imageUrls ? (
+                                <div className="flex-[1.4] relative w-full min-h-[400px] md:min-h-[480px] pointer-events-none mt-8 md:mt-0 flex items-end justify-center">
+                                    <div className="relative w-full max-w-[480px] h-full">
+                                        {/* Left Phone (Satune 1) */}
+                                        <img
+                                            src={project.imageUrls[0]}
+                                            alt={`${project.title} Screen 1`}
+                                            className="absolute left-[5%] md:left-[20px] bottom-[-50px] md:bottom-[-70px] w-[50%] md:w-[260px] h-auto z-20 pointer-events-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
+                                        />
+                                        {/* Right Phone (Satune 2) */}
+                                        <img
+                                            src={project.imageUrls[1]}
+                                            alt={`${project.title} Screen 2`}
+                                            className="absolute right-[5%] md:right-[20px] bottom-[-70px] md:bottom-[-100px] w-[42%] md:w-[240px] h-auto z-10 pointer-events-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]"
+                                        />
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="flex-[1.2] relative w-full h-[450px] rounded-[16px] md:rounded-tl-[24px] md:rounded-b-none md:rounded-r-none overflow-hidden border-t border-l border-white/10 shadow-[-10px_-10px_30px_rgba(0,0,0,0.5)]">
+                                    <img
+                                        src={project.imageUrl}
+                                        alt={project.title}
+                                        loading="lazy"
+                                        className="object-cover object-top w-full h-full origin-bottom-right"
+                                    />
+                                </div>
+                            )}
                         </motion.div>
                     ))}
                 </AnimatePresence>

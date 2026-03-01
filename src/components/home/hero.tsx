@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { MousePointer2, Sparkles } from "lucide-react"
 
 export function HeroSection() {
     return (
@@ -58,13 +57,13 @@ export function HeroSection() {
                     <span className="text-[#31A8FF] font-bold text-xl tracking-tight">Ps</span>
                 </div>
                 {/* Cursor AI */}
-                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/20 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer group" title="Cursor AI">
-                    <MousePointer2 className="w-6 h-6 text-white group-hover:text-blue-400 transition-colors" />
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/20 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer group backdrop-blur-sm" title="Cursor AI">
+                    <Image src="/images/cursor.svg" alt="Cursor AI" width={24} height={24} className="w-6 h-6 object-contain group-hover:opacity-80 transition-opacity" />
                 </div>
                 {/* Antigravity AI */}
-                <div className="w-14 h-14 rounded-full bg-white/5 border border-purple-500/30 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer group relative overflow-hidden" title="Antigravity">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Sparkles className="w-6 h-6 text-purple-400 group-hover:text-purple-300 transition-colors relative z-10" />
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/20 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer group relative overflow-hidden backdrop-blur-sm" title="Antigravity">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <Image src="/images/antigravity.svg" alt="Antigravity" width={24} height={24} className="w-6 h-6 object-contain relative z-10 group-hover:scale-110 transition-transform" />
                 </div>
             </motion.div>
         </section>

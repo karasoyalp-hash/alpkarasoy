@@ -5,7 +5,7 @@ import { CaseStudiesSection } from "@/components/home/case-studies";
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-screen overflow-y-auto w-full snap-y snap-mandatory scroll-smooth">
+    <div className="flex flex-col w-full">
       <HeroSection />
       <AboutSection />
       <ServicesSection />
