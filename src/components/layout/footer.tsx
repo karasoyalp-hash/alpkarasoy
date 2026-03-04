@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Twitter, Linkedin, Github, Dribbble, ShieldCheck, Lock, Star } from "lucide-react"
 
 export function Footer() {
@@ -9,11 +10,14 @@ export function Footer() {
                 <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 mb-16">
                     {/* Brand & Socials */}
                     <div className="flex-[2] max-w-sm">
-                        <Link href="/" className="inline-flex items-center gap-2 mb-6">
-                            <div className="w-8 h-8 bg-[#00FFC6] rounded-xl flex items-center justify-center text-black font-bold text-lg">
-                                A
-                            </div>
-                            <span className="text-xl font-bold text-white tracking-tight">Alpkarasoy</span>
+                        <Link href="/" className="inline-flex items-center gap-2 mb-6 group">
+                            <Image
+                                src="/images/alpkarasoy.svg"
+                                alt="Logo"
+                                width={110}
+                                height={20}
+                                className="h-6 w-auto group-hover:scale-105 transition-transform"
+                            />
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
                             Crafting visually engaging and structurally sound user interfaces, ensuring seamless user journeys from problem identification to final iteration worldwide.
@@ -35,82 +39,35 @@ export function Footer() {
                     </div>
 
                     {/* Links Columns */}
-                    <div className="flex-[3] grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {/* Column 1 */}
+                    <div className="flex-[3] grid grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
+                        {/* Navigation */}
                         <div className="flex flex-col gap-4">
-                            <h4 className="text-white font-semibold mb-2">Product</h4>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Features</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Integrations</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Pricing</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Changelog</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Roadmap</Link>
+                            <h4 className="text-white font-semibold mb-2">Navigation</h4>
+                            <Link href="/" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Home</Link>
+                            <Link href="/about-me" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">About Me</Link>
+                            <Link href="/contact" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Contact</Link>
+                            <Link href="/my-portfolio" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">My Portfolio</Link>
                         </div>
-                        {/* Column 2 */}
+
+                        {/* Contact info directly if you like or social links repeated in text */}
                         <div className="flex flex-col gap-4">
-                            <h4 className="text-white font-semibold mb-2">Company</h4>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">About Us</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Careers</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Blog</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Press Kit</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Contact</Link>
+                            <h4 className="text-white font-semibold mb-2">Get in Touch</h4>
+                            <Link href="/contact" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Start a Project</Link>
+                            <Link href="mailto:hello@alpkarasoy.com" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Email Me</Link>
                         </div>
-                        {/* Column 3 */}
-                        <div className="flex flex-col gap-4">
-                            <h4 className="text-white font-semibold mb-2">Resources</h4>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Documentation</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Help Center</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">API Reference</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Community</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Tutorials</Link>
-                        </div>
-                        {/* Column 4 */}
-                        <div className="flex flex-col gap-4">
+
+                        {/* Legal */}
+                        <div className="flex flex-col gap-4 mt-8 md:mt-0 col-span-2 md:col-span-1">
                             <h4 className="text-white font-semibold mb-2">Legal</h4>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Privacy</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Terms</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Security</Link>
+                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Privacy Policy</Link>
+                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Terms of Service</Link>
                             <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Cookies</Link>
-                            <Link href="#" className="text-sm text-gray-400 hover:text-[#00FFC6] transition-colors">Compliance</Link>
                         </div>
                     </div>
                 </div>
 
-                {/* Middle Section: Badges & Newsletter */}
-                <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-8 border-b border-white/10 mb-8">
-                    {/* Badges */}
-                    <div className="flex flex-wrap items-center gap-3">
-                        <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs font-medium text-gray-300">
-                            <ShieldCheck className="w-4 h-4 text-[#00FFC6]" />
-                            SOC 2 Certified
-                        </div>
-                        <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs font-medium text-gray-300">
-                            <Lock className="w-4 h-4 text-[#00FFC6]" />
-                            GDPR Compliant
-                        </div>
-                        <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs font-medium text-gray-300">
-                            <div className="flex text-[#00FFC6]">
-                                <Star className="w-4 h-4 fill-current" />
-                                <Star className="w-4 h-4 fill-current" />
-                                <Star className="w-4 h-4 fill-current" />
-                                <Star className="w-4 h-4 fill-current" />
-                                <Star className="w-4 h-4 fill-current" />
-                            </div>
-                            <span className="ml-1">4.9/5 Rating</span>
-                        </div>
-                    </div>
-
-                    {/* Newsletter */}
-                    <div className="flex items-center w-full lg:w-auto max-w-md">
-                        <input
-                            type="email"
-                            placeholder="Get product updates..."
-                            className="bg-white/5 border border-white/10 text-white text-sm rounded-l-xl px-4 py-2.5 h-[42px] outline-none w-full focus:border-[#00FFC6] transition-colors placeholder:text-gray-500"
-                        />
-                        <button className="bg-[#00FFC6] hover:bg-[#00FFC6]/90 text-black font-semibold text-sm px-6 h-[42px] rounded-r-xl transition-colors whitespace-nowrap">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
+                {/* Middle Section: Removed */}
+                <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between pb-2 border-b border-white/10 mb-8 w-full" />
 
                 {/* Bottom Section: Copyright & Bottom Links */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
