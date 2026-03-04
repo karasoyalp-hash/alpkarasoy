@@ -13,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Alp | UI/UX Designer & Developer",
   description: "Portfolio of Alp, a UI/UX Designer with 5+ years of experience crafting digital experiences.",
+  alternates: {
+    canonical: "https://alpkarasoy.com/",
+  },
 };
 
 export default function RootLayout({
