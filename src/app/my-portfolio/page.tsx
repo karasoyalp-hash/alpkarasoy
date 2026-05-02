@@ -102,10 +102,28 @@ const PROJECTS: Project[] = [
     {
         id: "10",
         category: "B2B & SAAS Project",
-        typeLabel: "Analytics Portal",
-        title: "Saha Operasyonları",
-        description: "Nulla facilisi cras fermentum odio eu. Pulvinar sapien et ligula ullamcorper malesuada proin libero. In arcu cursus euismod quis viverra nibh cras.",
-        imageUrl: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=2464&auto=format&fit=crop",
+        typeLabel: "CRM Dashboard",
+        title: "CRM SaaS Platform",
+        description: "A comprehensive customer relationship management platform designed to streamline sales pipelines, enhance client interactions, and provide actionable analytics for B2B enterprises.",
+        imageUrls: ["/images/CrmSaas-1.png", "/images/CrmSaas-2.png"],
+        detailLink: "#",
+    },
+    {
+        id: "11",
+        category: "B2B & SAAS Project",
+        typeLabel: "Project Management",
+        title: "TaskPilot SaaS",
+        description: "An intuitive collaborative platform designed for teams to easily track tasks, organize projects, and maintain clear communications through an aesthetic minimal dashboard.",
+        imageUrls: ["/images/TaskSaas-1.png", "/images/TaskSaas-2.png"],
+        detailLink: "#",
+    },
+    {
+        id: "12",
+        category: "B2B & SAAS Project",
+        typeLabel: "EdTech Platform",
+        title: "EduPath SaaS",
+        description: "A modern educational management system designed to streamline course delivery, track student progress, and facilitate seamless interactions between educators and learners.",
+        imageUrls: ["/images/EduPath-1.png", "/images/EduPath-2.png"],
         detailLink: "#",
     },
 ]
@@ -202,6 +220,21 @@ export default function MyPortfolio() {
                                             src={project.imageUrls[1]}
                                             alt={`${project.title} Screen 2`}
                                             className="absolute right-[5%] md:right-[20px] bottom-[-70px] md:bottom-[-100px] w-[42%] md:w-[240px] h-auto z-10 pointer-events-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]"
+                                        />
+                                    </div>
+                                </div>
+                            ) : project.category === "B2B & SAAS Project" && project.imageUrls ? (
+                                <div className="flex-[1.4] relative w-full h-[400px] md:h-[500px] rounded-[16px] md:rounded-tl-[24px] md:rounded-b-none md:rounded-r-none overflow-hidden pt-8 pl-8 md:pt-14 md:pl-14">
+                                    <div className="flex flex-col gap-6 md:gap-8 w-full md:w-[110%] pointer-events-none">
+                                        <img
+                                            src={project.imageUrls[0]}
+                                            alt={`${project.title} Dashboard 1`}
+                                            className="w-full h-auto rounded-tl-[12px] md:rounded-tl-[16px] border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] object-cover"
+                                        />
+                                        <img
+                                            src={project.imageUrls[1]}
+                                            alt={`${project.title} Dashboard 2`}
+                                            className="w-full h-auto rounded-tl-[12px] md:rounded-tl-[16px] border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] object-cover"
                                         />
                                     </div>
                                 </div>

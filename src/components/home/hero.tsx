@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 
 export function HeroSection() {
     return (
@@ -33,9 +34,9 @@ export function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="relative z-20 mb-16"
             >
-                <button className="bg-gradient-to-r from-[#ff00cc] via-[#3333ff] to-[#00ffcc] animate-gradient text-white border border-white/20 rounded-full px-7 py-3 text-sm md:text-base font-semibold transition-all shadow-[0_0_20px_rgba(255,0,204,0.4)] hover:shadow-[0_0_30px_rgba(0,255,204,0.6)] hover:scale-105 cursor-pointer tracking-wide">
+                <Link href="/my-portfolio" className="inline-block bg-gradient-to-r from-[#ff00cc] via-[#3333ff] to-[#00ffcc] animate-gradient text-white border border-white/20 rounded-full px-7 py-3 text-sm md:text-base font-semibold transition-all shadow-[0_0_20px_rgba(255,0,204,0.4)] hover:shadow-[0_0_30px_rgba(0,255,204,0.6)] hover:scale-105 cursor-pointer tracking-wide">
                     View my Portfolio Project
-                </button>
+                </Link>
             </motion.div>
 
             <motion.div
