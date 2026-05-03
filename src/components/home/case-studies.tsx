@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function CaseStudiesSection() {
     const projects = [
@@ -135,14 +136,14 @@ export function CaseStudiesSection() {
                         On projects, I don’t just design interfaces; I define the product logic and structure the user journey. I start by identifying the core problem and goals, then build the information architecture and flow design. By establishing a design system, I ensure consistency and scalability, and refine interactions during the prototyping phase. The process evolves continuously through testing, feedback, and iteration.
                     </p>
 
-                    <button className="group relative inline-flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-[#10131A] text-white font-medium border border-white/10 hover:border-[#4FD1FF]/40 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_4px_30px_rgba(79,209,255,0.15)] overflow-hidden">
+                    <Link href="/my-portfolio" className="group relative inline-flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-[#10131A] text-white font-medium border border-white/10 hover:border-[#4FD1FF]/40 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_4px_30px_rgba(79,209,255,0.15)] overflow-hidden">
                         <span className="relative z-10 text-[15px] tracking-wide">Show All Project</span>
                         <div className="w-9 h-9 rounded-full bg-white/5 group-hover:bg-[#4FD1FF]/20 flex items-center justify-center transition-colors duration-300 relative z-10">
                             <ArrowRight size={16} className="text-white/70 group-hover:text-[#4FD1FF] transition-colors" strokeWidth={2.5} />
                         </div>
                         {/* Subtle glow effect behind button */}
                         <div className="absolute inset-0 bg-gradient-to-r from-[#4FD1FF]/0 via-[#4FD1FF]/5 to-[#4FD1FF]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </button>
+                    </Link>
                 </div>
 
             </div>
